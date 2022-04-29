@@ -13,6 +13,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "terraform-rg" {
-    name = "terraform-rg"
-    location = "East US 2"
+    name = var.resource_group_name
+    location = var.resource_group_location
 }
