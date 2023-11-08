@@ -2,13 +2,16 @@ terraform {
     required_providers {
         azurerm = {
             source = "hashicorp/azurerm"
-            version = "~> 3.0.0"
+            version = "~> 3.79.0"
         }
+    }
+    backend "azurerm" {
+        key = "terraform.tfstate"
     }
 }
 
 provider "azurerm" {
-    subscription_id = "c02fd757-b403-434f-b3e7-9b6b1485ba1b"
+    skip_provider_registration = true
     features {}
 }
 
